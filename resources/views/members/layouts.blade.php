@@ -96,7 +96,7 @@
     <h1>@yield('heading')</h1>
    <div class="icon">
 <a href="{{route('index#content')}}"> <i class="fa-solid fa-house"></i> Home</a>
-<a href="{{route('index#member')}}"> <i class="fa-solid fa-angles-right"></i> @yield('head')</a>
+<a href=""> <i class="fa-solid fa-angles-right"></i> @yield('head')</a>
 <i class="fa-solid fa-angles-right"></i> @yield('Third')
 </div>
   </div>
@@ -139,4 +139,5 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset('home/js/script.js')}}"></script>
+@yield('script')
 </html>

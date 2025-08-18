@@ -15,4 +15,5 @@ Route::get('list/{id}',[MemberController::class,'list'])->name('list#member');
 
 Route::group(['prefix'=>'post'],function(){
     Route::get('index',[PostController::class,'index'])->name('post#index');
+    Route::get('detail',[PostController::class,'detail'])->name('post#detail');
 });

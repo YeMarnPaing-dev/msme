@@ -138,3 +138,18 @@
 }
 
 
+.description {
+    white-space: pre-line;
+}
+
+.workshop {
+ width:  100px;
+    height: auto;
+}
+
+.gallery {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
