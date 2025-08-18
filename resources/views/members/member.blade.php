@@ -2,8 +2,9 @@
 @section('title','Member')
 @section('content')
 
-
+ <div class="town">မြို့နယ်အလိုက်အသင်းများ</div>
 <section class="committee container my-4">
+
   <div class="row g-3">
  @foreach($township as $town)
         <div class="col-12 col-sm-6 col-md-3">

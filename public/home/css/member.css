@@ -61,3 +61,11 @@
 .icon-user i{
     margin: 5px;
 }
+
+.town{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
