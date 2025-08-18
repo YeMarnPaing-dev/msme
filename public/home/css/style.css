@@ -1,6 +1,7 @@
 /* General */
 body {
     margin: 0;
+    padding: 0;
     font-family: "Open Sans", sans-serif;
     background-color: #fff;
     padding-top: 30px;
@@ -147,3 +148,116 @@ body {
     font-size: 30px;
     font-weight: 800;
 }
+
+
+/* initial hidden state */
+.direction .col-md-6 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* visible state */
+.direction .col-md-6.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.sponsor {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://wallpapercave.com/wp/Ex9MlTC.jpg'); /* replace with your image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* blur effect */
+  z-index: 1;
+}
+
+/* ensure content is above background */
+.slider,
+.button-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Glass button */
+.glass-btn {
+  padding: 12px 30px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 50px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.glass-btn:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.1);
+}
+
+/* Slider container */
+.slider {
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+}
+
+/* Slide animation */
+.slide {
+  flex: 0 0 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  animation: slideAnim 15s linear infinite;
+
+}
+
+.slide img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
+   border-radius: 15px;
+}
+
+.slide img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes slideAnim {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Button container position */
+.button-container {
+  position: absolute;
+  bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+
