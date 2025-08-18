@@ -16,4 +16,8 @@ class MemberController extends Controller
 
         return view('members.member',compact('townships'));
     }
+
+    public function list($id){
+        return view('members.list');
+    }
 }
