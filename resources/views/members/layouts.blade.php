@@ -91,6 +91,16 @@
     </div>
   </nav>
 
+<div class="header-menu">
+  <div class="header-content mt-4">
+    <h1>Members</h1>
+   <div class="icon">
+<a href="{{route('index#content')}}"> <i class="fa-solid fa-house"></i> Home</a>
+<i class="fa-solid fa-angles-right"></i> Members
+</div>
+  </div>
+</div>
+
       <!-- Content -->
    <div class="content">
         <div class="d-flex justify-content-center">
