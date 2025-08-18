@@ -51,8 +51,8 @@
               Post
             </a>
             <ul class="dropdown-menu" aria-labelledby="postDropdown">
-              <li><a class="dropdown-item" href="#">News</a></li>
-              <li><a class="dropdown-item" href="#">Updates</a></li>
+              <li><a class="dropdown-item" href="{{route('post#index')}}">Posts</a></li>
+              <li><a class="dropdown-item" href="#">Loan</a></li>
             </ul>
           </li>
 
@@ -93,10 +93,11 @@
 
 <div class="header-menu">
   <div class="header-content mt-4">
-    <h1>Members</h1>
+    <h1>@yield('heading')</h1>
    <div class="icon">
 <a href="{{route('index#content')}}"> <i class="fa-solid fa-house"></i> Home</a>
-<i class="fa-solid fa-angles-right"></i> Members
+<a href="{{route('index#member')}}"> <i class="fa-solid fa-angles-right"></i> @yield('head')</a>
+<i class="fa-solid fa-angles-right"></i> @yield('Third')
 </div>
   </div>
 </div>
@@ -104,7 +105,7 @@
       <!-- Content -->
    <div class="content">
         <div class="d-flex justify-content-center">
-            <div class="col-md-8 " style="margin: 50px 0px">
+            <div class="col-md-8 " style="margin: 20px 0px">
                 @yield('content')
             </div>
         </div>

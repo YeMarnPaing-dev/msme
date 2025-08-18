@@ -18,6 +18,13 @@ class MemberController extends Controller
     }
 
     public function list($id){
-        return view('members.list');
+       $township = DB::table('townships')->where('id', $id)->first();
+       $users = DB::table('users')
+    ->join('townships', 'users.township_id', '=', 'townships.id')
+    ->where('townships.id', $id)
+    ->select('users.*', 'townships.name as township_name')
+    ->paginate(12);
+
+       return view('members.list',compact('township','users'));
     }
 }
