@@ -2,8 +2,8 @@
 @section('heading', 'POST DETAIL')
 @section('title', 'Post Detail')
 
-@section('head', 'Posts Detail')
-{{-- @section('Third', 'Member List') --}}
+@section('head', 'Posts')
+@section('Third', 'Post Detail')
 @section('content')
 
 <section class="post-container container-fluid py-4">

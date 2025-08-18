@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
     public function index(){
-        return view('post.posts');
+      $posts = DB::table('posts')
+        ->orderBy('created_at', 'desc')
+        ->take(2)
+        ->get();
+        return view('post.posts',compact('posts'));
     }
 
     public function detail(){
