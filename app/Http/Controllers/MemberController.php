@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\DB;
 class MemberController extends Controller
 {
     public function index(){
-        $township = DB::table('townships')->get('name');
-        return view('members.member',compact('township'));
+      $townships = DB::table('townships')
+    ->leftJoin('users', 'townships.id', '=', 'users.township_id')
+    ->select('townships.id', 'townships.name', DB::raw('COUNT(users.id) as user_count'))
+    ->groupBy('townships.id', 'townships.name')
+    ->get();
+
+        return view('members.member',compact('townships'));
     }
 }

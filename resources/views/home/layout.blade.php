@@ -41,7 +41,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="memberDropdown">
               <li><a class="dropdown-item" href="{{route('index#member')}}">Member List</a></li>
-              <li><a class="dropdown-item" href="#">Join</a></li>
+              <li><a class="dropdown-item" href="#">Executive Council</a></li>
             </ul>
           </li>
 
