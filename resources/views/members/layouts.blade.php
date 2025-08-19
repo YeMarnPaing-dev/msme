@@ -96,7 +96,7 @@
     <h1>@yield('heading')</h1>
    <div class="icon">
 <a href="{{route('index#content')}}"> <i class="fa-solid fa-house"></i> Home</a>
-<a href=""> <i class="fa-solid fa-angles-right"></i> @yield('head')</a>
+<a href="javascript:void(0);" class="back"> <i class="fa-solid fa-angles-right"></i>Back</a>
 <i class="fa-solid fa-angles-right"></i> @yield('Third')
 </div>
   </div>
@@ -139,5 +139,23 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset('home/js/script.js')}}"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+  $('.back').on('click', function(e) {
+            e.preventDefault();
+            window.history.go(-1);
+            return false;
+        });
+})
+
+</script>
 @yield('script')
 </html>

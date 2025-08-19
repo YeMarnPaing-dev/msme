@@ -2,7 +2,7 @@
 @section('heading', 'POST')
 @section('title', 'Post')
 
-@section('head', 'Posts')
+
 {{-- @section('Third', 'Member List') --}}
 @section('content')
 
@@ -21,8 +21,9 @@
                        {{$post->title}}
                     </div>
                     <div class="description mt-2">
-                        {{ Str::limit($post->detail_description, 300) }}
-                        <a href="{{route('post#detail')}}">
+                       {{ Str::limit(strip_tags($post->detail_description), 300) }}
+
+                        <a href="{{route('post#detail', $post->id)}}">
                             <button class="btn btn-success btn-sm">Read More</button>
                         </a>
                     </div>

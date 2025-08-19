@@ -1,7 +1,7 @@
 @extends('members.layouts')
 @section('heading','MEMBER')
 @section('title','Members')
-@section('head','Members')
+
 @section('content')
 
  <div class="town">မြို့နယ်အလိုက်အသင်းများ</div>
