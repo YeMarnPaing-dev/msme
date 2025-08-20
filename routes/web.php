@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\ComettieController;
 
@@ -27,3 +28,9 @@ Route::get('shops',[ShopController::class,'shop'])->name('shop#index');
 Route::get('shop_detail/{id}',[ShopController::class,'detail'])->name('shop#detail');
 Route::get('comettie',[ComettieController::class,'cmt'])->name('comettie#index');
 Route::get('aboutUs',[ComettieController::class,'about'])->name('about#us');
+
+
+Route::group(['prefix'=>'contact'],function(){
+Route::get('contactUs',[ContactController::class,'create'])->name('contact#create');
+Route::store('contactUs',[ContactController::class,'store'])->name('contact#store');
+});

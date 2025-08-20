@@ -72,7 +72,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
               <li><a class="dropdown-item" href="{{route('about#us')}}">About Us</a></li>
-              <li><a class="dropdown-item" href="#">Mission</a></li>
+              <li><a class="dropdown-item" href="{{route('contact#create')}}">Contact Us</a></li>
             </ul>
           </li>
 
