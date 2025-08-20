@@ -7,6 +7,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\ComettieController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/',[ContentController::class,'index'])->name('index#content');
 
@@ -33,4 +34,9 @@ Route::get('aboutUs',[ComettieController::class,'about'])->name('about#us');
 Route::group(['prefix'=>'contact'],function(){
 Route::get('contactUs',[ContactController::class,'create'])->name('contact#create');
 Route::post('contactUs',[ContactController::class,'store'])->name('contact#store');
+});
+
+Route::group(['prefix'=>'register'],function(){
+Route::get('form',[RegisterController::class,'index'])->name('register#index');
+Route::post('form/create',[RegisterController::class,'create'])->name('register#create');
 });
