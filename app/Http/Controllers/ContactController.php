@@ -9,4 +9,18 @@ class ContactController extends Controller
     public function create(){
         return view('contact.create');
     }
+
+    public function store(Request $request){
+          $validated = $request->validate([
+        'name'    => 'required|string|max:255',
+        'email'   => 'required|email|max:255',
+        'subject' => 'required|string|max:255',
+        'message' => 'required|string',
+    ]);
+
+
+
+    }
+
+
 }

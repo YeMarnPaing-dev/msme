@@ -13,25 +13,32 @@
       <div class="col-12 col-md-6 mb-4 mb-md-0">
         <div class="p-4 shadow rounded bg-white h-100 d-flex flex-column justify-content-center">
           <h3 class="mb-4 text-center fw-bold">Contact Us</h3>
-          <form >
+          <form action="{{route('contact#store')}}" method="POST">
+            @csrf
             <div class="mb-3">
               <label for="name" class="form-label fw-semibold">Name</label>
-              <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
+              <input type="text" id="name" name="name" class="form-control @error('name') is-invalid  @enderror" placeholder="Enter your name">
+              @error('name') <div class="invalid-feedback">{{$message}}</div> @enderror
             </div>
 
             <div class="mb-3">
               <label for="email" class="form-label fw-semibold">Email</label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
+              <input type="email" id="email" name="email" class="form-control @error('email') is-invalid  @enderror" placeholder="Enter your email">
+          @error('email') <div class="invalid-feedback">{{$message}}</div> @enderror
             </div>
 
             <div class="mb-3">
               <label for="subject" class="form-label fw-semibold">Subject</label>
-              <input type="subject" id="subject" name="subject" class="form-control" placeholder="Enter your subject">
+              <input type="subject" id="subject" name="subject" class="form-control @error('subject') is-invalid  @enderror" placeholder="Enter your subject">
+            @error('subject') <div class="invalid-feedback">{{$message}}</div> @enderror
             </div>
 
             <div class="mb-3">
               <label for="message" class="form-label fw-semibold">Message</label>
-              <textarea id="message" name="message" class="form-control" rows="4" placeholder="Write your message"></textarea>
+              <textarea id="message" name="message" class="form-control @error('message') is-invalid  @enderror" rows="4" placeholder="Write your message">
+
+              </textarea>
+              @error('message') <div class="invalid-feedback">{{$message}}</div> @enderror
             </div>
 
             <div class="d-grid">

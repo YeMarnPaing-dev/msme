@@ -32,5 +32,5 @@ Route::get('aboutUs',[ComettieController::class,'about'])->name('about#us');
 
 Route::group(['prefix'=>'contact'],function(){
 Route::get('contactUs',[ContactController::class,'create'])->name('contact#create');
-Route::store('contactUs',[ContactController::class,'store'])->name('contact#store');
+Route::post('contactUs',[ContactController::class,'store'])->name('contact#store');
 });
