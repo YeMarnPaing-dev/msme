@@ -23,3 +23,4 @@ Route::group(['prefix'=>'post'],function(){
 });
 
 Route::get('shops',[ShopController::class,'shop'])->name('shop#index');
+Route::get('shop_detail/{id}',[ShopController::class,'detail'])->name('shop#detail');

@@ -17,4 +17,12 @@ class ShopController extends Controller
         ->appends($request->all());
         return view('shops.shop',compact('townships','shops'));
     }
+
+    public function detail($id){
+
+      $shop = DB::table('shops')->where('id', $id)->first();
+
+      return view('shops.detail',compact('shop'));
+
+    }
 }
