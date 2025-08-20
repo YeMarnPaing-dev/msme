@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -18,6 +19,20 @@ class ContactController extends Controller
         'message' => 'required|string',
     ]);
 
+    // DB::table('contacts')->insert([
+    //     'name'=>$request->name,
+    //     'email'=>$request->email,
+    //     'subject'=>$request->subject,
+    //     'message'=>$request->message
+    // ]);
+    DB::table('contacts')->insert([
+        'name'=>$request->name,
+        'email'=>$request->email,
+        'subject'=>$request->subject,
+        'message'=>$request->message
+    ]);
+
+     return redirect()->back()->with('success', 'Your message has been saved successfully!');
 
 
     }

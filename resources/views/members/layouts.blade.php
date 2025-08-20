@@ -158,13 +158,13 @@ $(document).ready(function(){
             return false;
         });
 
-         Swal.fire({
-        icon: 'success',
-        title: 'Success',
-        text: '{{ session('success') }}',
-        showConfirmButton: false,
-        timer: 2000
-    })
+    //      Swal.fire({
+    //     icon: 'success',
+    //     title: 'Success',
+    //     text: '{{ session('success') }}',
+    //     showConfirmButton: false,
+    //     timer: 2000
+    // })
 })
 
 </script>

@@ -72,3 +72,34 @@
 
 
 @endsection
+
+@section('script')
+<script>
+    $(document).ready(function(){
+   @if(session('success'))
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: '{{ session('success') }}',
+        showConfirmButton: false,
+        timer: 2000
+    })
+
+@endif
+
+@if(session('error'))
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: '{{ session('error') }}',
+        showConfirmButton: false,
+        timer: 2000
+    })
+    @endif
+})
+
+</script>
+
+@endsection
