@@ -52,7 +52,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="postDropdown">
               <li><a class="dropdown-item" href="{{route('post#index')}}">Posts</a></li>
-              <li><a class="dropdown-item" href="#">Loan</a></li>
+              <li><a class="dropdown-item" href="{{route('post#loan')}}">Loan</a></li>
             </ul>
           </li>
 
