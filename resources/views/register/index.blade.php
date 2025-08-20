@@ -446,10 +446,8 @@
                 <div class="col-sm-9">
 
                     <input type="text" name="product" value="{{ old('product') }}"
-                        class="form-control mt-3  @error('product') is-invalid @enderror" placeholder="Product....">
-                    @error('product')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                    @enderror
+                        class="form-control mt-3  " placeholder="Product....">
+
                 </div>
 
             </div>
@@ -458,10 +456,8 @@
                 <label class="col-sm-3 col-form-label">(ခ) ထုတ်လုပ်သည့်အမျိုးအစားပေါင်း</label>
                 <div class="col-sm-9">
                     <input type="text" name="category" value="{{ old('category') }}"
-                        class="form-control  @error('category') is-invalid @enderror" placeholder="Quantity...">
-                    @error('category')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                    @enderror
+                        class="form-control  " placeholder="Quantity...">
+
 
                 </div>
 
@@ -478,11 +474,9 @@
                 <div class="col-sm-9">
 
                     <input type="text" name="sale_product" value="{{ old('sale_product') }}"
-                        class="form-control mt-3  @error('sale_product') is-invalid @enderror"
+                        class="form-control mt-3  "
                         placeholder="Sale_Product....">
-                    @error('sale_product')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                    @enderror
+
                 </div>
 
             </div>
@@ -491,10 +485,8 @@
                 <label class="col-sm-3 col-form-label">(ခ) လက်ကား/လက်လီ</label>
                 <div class="col-sm-9">
                     <input type="text" name="order_not" value="{{ old('order_not') }}"
-                        class="form-control  @error('order_not') is-invalid @enderror" placeholder="...">
-                    @error('order_not')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                    @enderror
+                        class="form-control  " placeholder="...">
+
 
                 </div>
 
@@ -511,10 +503,8 @@
                 <div class="col-sm-9">
 
                     <input type="text" value="{{ old('service') }}" name="service"
-                        class="form-control mt-3  @error('service') is-invalid @enderror" placeholder="Service....">
-                    @error('service')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                    @enderror
+                        class="form-control mt-3 " placeholder="Service....">
+
                 </div>
 
             </div>
@@ -523,10 +513,8 @@
                 <label class="col-sm-3 col-form-label">(ခ) လုပ်ငန်းအရေအတွက်</label>
                 <div class="col-sm-9">
                     <input type="text" value="{{ old('quantity') }}" name="quantity"
-                        class="form-control  @error('quantity') is-invalid @enderror" placeholder="...">
-                    @error('quantity')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                    @enderror
+                        class="form-control  " placeholder="...">
+
 
                 </div>
 
@@ -543,10 +531,8 @@
                 <div class="col-sm-9">
 
                     <input type="text" value="{{ old('other_work') }}" name="other_work"
-                        class="form-control mt-3  @error('other_work') is-invalid @enderror" placeholder="....">
-                    @error('other_work')
-                        <span class="invalid-feedback">{{ $message }}</span>
-                    @enderror
+                        class="form-control mt-3  " placeholder="....">
+
                 </div>
 
             </div>
@@ -692,5 +678,35 @@
 
 
 
+
+@endsection
+@section('script')
+<script>
+    $(document).ready(function(){
+   @if(session('success'))
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: '{{ session('success') }}',
+        showConfirmButton: false,
+        timer: 2000
+    })
+
+@endif
+
+@if(session('error'))
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: '{{ session('error') }}',
+        showConfirmButton: false,
+        timer: 2000
+    })
+    @endif
+})
+
+</script>
 
 @endsection
