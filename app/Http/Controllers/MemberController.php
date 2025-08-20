@@ -29,6 +29,30 @@ class MemberController extends Controller
     }
 
     public function council(){
-        return view('members.council');
+      $users = DB::table('councils')
+    ->leftJoin('users', 'councils.user_id', '=', 'users.id')
+    ->leftJoin('designations', 'councils.designation_id', '=', 'designations.id')
+    ->select(
+        'councils.*',
+        'users.name_mm as user_name',
+        'designations.designation as designation_name'
+    )
+    ->where('councils.designation_id', '!=', 1) // exclude designation_id = 1
+    ->paginate(5); // paginate 4 per page
+
+
+    $president = DB::table('councils')
+    ->leftJoin('users', 'councils.user_id', '=', 'users.id')
+    ->leftJoin('designations', 'councils.designation_id', '=', 'designations.id')
+    ->select(
+        'councils.*',
+        'users.name_mm as name',
+        'designations.designation as designation_name'
+    )
+    ->where('councils.designation_id', 1) // filter by designation_id = 1
+    ->first();
+
+
+        return view('members.council',compact('users','president'));
     }
 }

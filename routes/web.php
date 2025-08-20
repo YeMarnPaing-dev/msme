@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ContentController;
 
@@ -19,5 +20,6 @@ Route::group(['prefix'=>'post'],function(){
     Route::get('detail/{id}',[PostController::class,'detail'])->name('post#detail');
     Route::get('loan',[PostController::class,'loan'])->name('post#loan');
     Route::get('Loandetail/{id}',[PostController::class,'Loandetail'])->name('post#detail_loan');
-
 });
+
+Route::get('shops',[ShopController::class,'shop'])->name('shop#index');

@@ -15,37 +15,28 @@
   <div class="container-card">
     <div class="card-member">
         <img src="{{ asset('home/image/profile/R.png') }}" alt="">
-        <h4>U Nay Lin Htile</h4>
-        <p>အုပ်ကြီး</p>
+        <h4>{{$president->name}}</h4>
+        <p>{{$president->designation_name}}</p>
     </div>
 </div>
 
 
 <div class="card-container">
+   @foreach($users as $user)
     <div class="member-card">
         <img src="{{ asset('home/image/profile/R.png') }}" alt="">
-        <h4>U Nay Lin Htile</h4>
-        <p>အုပ်ကြီး</p>
+        <h4>{{ $user->user_name }}</h4>
+        <p>{{ $user->designation_name }}</p>
     </div>
-    <div class="member-card">
-        <img src="{{ asset('home/image/profile/R.png') }}" alt="">
-        <h4>Another Member</h4>
-        <p>အသင်းသား</p>
-    </div>
-    <div class="member-card">
-        <img src="{{ asset('home/image/profile/R.png') }}" alt="">
-        <h4>Another Member</h4>
-        <p>အသင်းသား</p>
-    </div>
-    <div class="member-card">
-        <img src="{{ asset('home/image/profile/R.png') }}" alt="">
-        <h4>Another Member</h4>
-        <p>အသင်းသား</p>
-    </div>
+@endforeach
 </div>
 
 
 </section>
+
+   <div class="mt-4  d-flex justify-content-center">
+    {{ $users->links('pagination::bootstrap-5') }}
+</div>
 
 
 

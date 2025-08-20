@@ -58,7 +58,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Discount Shops</a>
+            <a class="nav-link" href="{{route('shop#index')}}">Discount Shops</a>
           </li>
 
           <li class="nav-item">
