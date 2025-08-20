@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{asset('home/css/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{asset('home/css/member.css')}}">
+    <link rel="stylesheet" href="{{asset('home/css/council.css')}}">
 
     <title>@yield('title')</title>
 </head>
@@ -41,7 +42,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="memberDropdown">
               <li><a class="dropdown-item" href="{{route('index#member')}}">Member List</a></li>
-              <li><a class="dropdown-item" href="#">Executive Council</a></li>
+              <li><a class="dropdown-item" href="{{route('council#member')}}">Executive Council</a></li>
             </ul>
           </li>
 

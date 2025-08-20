@@ -27,4 +27,8 @@ class MemberController extends Controller
 
        return view('members.list',compact('township','users'));
     }
+
+    public function council(){
+        return view('members.council');
+    }
 }

@@ -11,6 +11,7 @@ Route::get('/',[ContentController::class,'index'])->name('index#content');
 Route::group(['prefix'=>'member'],function(){
 Route::get('index',[MemberController::class,'index'])->name('index#member');
 Route::get('list/{id}',[MemberController::class,'list'])->name('list#member');
+Route::get('council',[MemberController::class,'council'])->name('council#member');
 });
 
 Route::group(['prefix'=>'post'],function(){
