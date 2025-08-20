@@ -1,21 +1,14 @@
-@extends('home.layout')
-@section('title','MSME')
+@extends('members.layouts')
+@section('heading','About Us')
+@section('title','About Us')
 
 @section('content')
 
-<section class="committee container my-4">
-  <div class="row g-3">
- @foreach($comettie as $cmt)
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="box-1">{{ $cmt->cmt_name }}
+<div class="association-title">
+    အငယ်စား၊ အသေးစားနှင့်အလတ်စား စီးပွားရေးလုပ်ငန်းရှင်များအသင်း <br>
+    Micro, Small and Medium Enterprises Association
 
-            </div>
-        </div>
-    @endforeach
-
-  </div>
-
-</section>
+</div>
 
 <section class="direction">
 <div class="row justify-content-center">
@@ -49,28 +42,6 @@
 </div>
     </div>
 </div>
-</section>
-
-
-
-<section class="sponsor" style="background-color: black;">
-  <div class="bg-image"></div>
-
-  <div class="slider">
-    <div class="slide"><img src="{{asset('home/image/msmelogo1.jpg')}}" alt="logo 1"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo2.jpg')}}" alt="logo 2"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo3.jpg')}}" alt="Logo 3"></div>
-     <div class="slide"><img src="{{asset('home/image/msmelogo4.jpg')}}" alt="Logo 1"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo5.jpg')}}" alt="Logo 2"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo1.jpg')}}" alt="Logo 3"></div>
-     <div class="slide"><img src="{{asset('home/image/msmelogo2.jpg')}}" alt="Logo 1"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo3.jpg')}}" alt="Logo 2"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo4.jpg')}}" alt="Logo 3"></div>
-  </div>
-
-  <div class="button-container">
-    <button class="glass-btn">Sponsored By</button>
-  </div>
 </section>
 
 

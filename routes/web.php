@@ -26,3 +26,4 @@ Route::group(['prefix'=>'post'],function(){
 Route::get('shops',[ShopController::class,'shop'])->name('shop#index');
 Route::get('shop_detail/{id}',[ShopController::class,'detail'])->name('shop#detail');
 Route::get('comettie',[ComettieController::class,'cmt'])->name('comettie#index');
+Route::get('aboutUs',[ComettieController::class,'about'])->name('about#us');

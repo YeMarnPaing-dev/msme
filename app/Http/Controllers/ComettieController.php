@@ -11,4 +11,8 @@ class ComettieController extends Controller
     $cmt = DB::table('cmt')->paginate(8);
 return view('cometties.comettie',compact('cmt'));
     }
+
+    public function about(){
+        return view('cometties.about');
+    }
 }
