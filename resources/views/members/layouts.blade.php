@@ -62,7 +62,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Committee</a>
+            <a class="nav-link" href="{{route('comettie#index')}}">Committee</a>
           </li>
 
           <!-- About dropdown -->

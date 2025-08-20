@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\ComettieController;
 
 Route::get('/',[ContentController::class,'index'])->name('index#content');
 
@@ -24,3 +25,4 @@ Route::group(['prefix'=>'post'],function(){
 
 Route::get('shops',[ShopController::class,'shop'])->name('shop#index');
 Route::get('shop_detail/{id}',[ShopController::class,'detail'])->name('shop#detail');
+Route::get('comettie',[ComettieController::class,'cmt'])->name('comettie#index');
