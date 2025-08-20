@@ -17,6 +17,8 @@
 </head>
 <body>
 
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
     <div class="container header">
       <!-- Logo -->
@@ -103,8 +105,8 @@
     <div class="carousel-item active">
       <img src="{{ asset('home/image/msmelogo1.jpg') }}" class="d-block w-100 slider-img" alt="Slide 1">
       <div class="carousel-caption text-start">
-        <h1 class="fw-bold">Linn</h1>
-        <p class="fs-4">IT, Mobile & Electronics Mart</p>
+        <h1 class="fw-bold">MSME</h1>
+        <p class="fs-4">Myanmar Small Medium Entrepreur</p>
         <a href="{{ route('contact#create') }}" class="btn btn-success rounded-pill px-4 py-2">Contact Us</a>
       </div>
     </div>
