@@ -6,32 +6,33 @@
 {{-- @section('Third', 'Member List') --}}
 @section('content')
 
-<section class="post-container container-fluid py-4">
+    <section class="post-container container-fluid py-4">
 
-    <div class="row g-4">
-        <!-- LEFT SIDE (Posts) -->
-        <div class="col-12 col-md-6">
-            <div class="row g-4">
+        <div class="row g-4">
+            <!-- LEFT SIDE (Posts) -->
+            <div class="col-12 col-md-6">
+                <div class="row g-4">
 
-                <!-- First Post -->
-          @foreach ($posts as $post)
-                <div class="col-12">
-                    <div class="btn btn-success"> {{ \Carbon\Carbon::parse($post->created_at)->format('j-F-Y') }}</div>
-                    <div class="mt-3 fw-bold">
-                       {{$post->title}}
-                    </div>
-                    <div class="description mt-2">
-                       {{ Str::limit(strip_tags($post->detail_description), 300) }}
+                    <!-- First Post -->
+                    @foreach ($posts as $post)
+                        <div class="col-12">
+                            <div class="btn btn-success"> {{ \Carbon\Carbon::parse($post->created_at)->format('j-F-Y') }}
+                            </div>
+                            <div class="mt-3 fw-bold">
+                                {{ $post->title }}
+                            </div>
+                            <div class="description mt-2">
+                                {{ Str::limit(strip_tags($post->detail_description), 300) }}
 
-                        <a href="{{route('post#detail', $post->id)}}">
-                            <button class="btn btn-success btn-sm">Read More</button>
-                        </a>
-                    </div>
-                </div>
-          @endforeach
+                                <a href="{{ route('post#detail', $post->id) }}">
+                                    <button class="btn btn-success btn-sm">Read More</button>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
 
-                <!-- Second Post -->
-                {{-- <div class="col-12">
+                    <!-- Second Post -->
+                    {{-- <div class="col-12">
                     <div class="btn btn-success">06 Feb 2025</div>
                     <div class="mt-3 fw-bold">
                         စက်မှု SME Card ကို Online မှတဆင့် လျှောက်ပေးခြင်း နှင့် ပြုလုပ်ပုံအဆင့်အဆင့် တို့ကို
@@ -46,43 +47,73 @@
                     </div>
                 </div> --}}
 
-            </div>
-        </div>
-
-        <!-- RIGHT SIDE (Sidebar) -->
-        <div class="col-12 col-md-6">
-
-            <div class="row g-4">
-                <div class="col-12">
-                    <div class="text-center fw-bold">RECENT EVENT</div>
-                    <hr>
-                @foreach ($posts as $post)
-                      <div class="d-flex">
-                        <img class="workshop img-fluid" src="{{ asset('home/image/msme.png') }}" alt="">
-                        {{$post->title}}
-                    </div>
-                    <hr>
-
-                 @endforeach
-
-                </div>
-
-                <div class="col-12">
-                    <div class="text-center fw-bold">OUR GALLERY</div>
-                    <div class="row g-2 mt-3 text-center">
-                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}" alt=""></div>
-                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}" alt=""></div>
-                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}" alt=""></div>
-                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}" alt=""></div>
-                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}" alt=""></div>
-                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}" alt=""></div>
-                    </div>
                 </div>
             </div>
 
+            <!-- RIGHT SIDE (Sidebar) -->
+            <div class="col-12 col-md-6">
+
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="text-center fw-bold mb-3">RECENT EVENT</div>
+
+                        @foreach ($posts as $post)
+                            <div data-bs-toggle="modal" data-bs-target="#myModal-{{$post->id}}" class="card glass-card mb-3">
+                                <div class="card-body d-flex align-items-center">
+                                    <img class="workshop img-fluid me-3" src="{{ asset('home/image/msme.png') }}"
+                                        alt="Event Image"
+                                        style="width:100px; height:60px; object-fit:cover; border-radius:10px;">
+                                    <h5 class="mb-0">{{ $post->title }}....</h5>
+                                </div>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal-{{$post->id}}" tabindex="-1" aria-labelledby="modalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalLabel-{{$post->id}}">{{$post->title}}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          {!! $post->detail_description !!}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success"
+                                                data-bs-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+
+                    <div class="col-12">
+                        <div class="text-center fw-bold">OUR GALLERY</div>
+                        <div class="row g-2 mt-3 text-center">
+                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
+                                    alt=""></div>
+                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
+                                    alt=""></div>
+                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
+                                    alt=""></div>
+                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
+                                    alt=""></div>
+                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
+                                    alt=""></div>
+                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
+                                    alt=""></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 

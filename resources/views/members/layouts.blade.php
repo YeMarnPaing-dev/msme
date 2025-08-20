@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('home/css/style.css')}}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('home/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('home/css/member.css')}}">
     <link rel="stylesheet" href="{{asset('home/css/council.css')}}">
+    <link rel="stylesheet" href="{{asset('home/css/footer.css')}}">
 
     <title>@yield('title')</title>
 </head>
@@ -82,7 +84,7 @@
               Account
             </a>
             <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-              <li><a class="dropdown-item" href="https://msme.org.mm/auth/login">Login</a></li>
+              <li><a class="dropdown-item" href="{{route('register#login')}}">Login</a></li>
               <li><a class="dropdown-item" href="{{route('register#index')}}">Register</a></li>
             </ul>
           </li>
@@ -115,7 +117,7 @@
 
 
     <!-- Bottom Menu -->
-    <div class="bottom-menu">
+    <div class="bottom-under">
 
         <div class="row justify-content-center">
             <div class="col-md-8 p-3">

@@ -111,7 +111,7 @@ class RegisterController extends Controller
         // 'order_not' => 'required',
         // 'service' => 'required',
         // 'quantity' => 'required',
-        // 'other_work' => 'required',
+        'other_work' => 'required',
         'leader' => 'required',
         'supervisor' => 'required',
         'smart_worker' => 'required',

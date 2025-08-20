@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('home/css/style.css')}}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{asset('home/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('home/css/footer.css')}}">
 
 
     <title>@yield('title')</title>
@@ -81,7 +84,7 @@
               Account
             </a>
             <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-              <li><a class="dropdown-item" href="https://msme.org.mm/auth/login">Login</a></li>
+              <li><a class="dropdown-item" href="{{route('register#login')}}">Login</a></li>
               <li><a class="dropdown-item" href="{{route('register#index')}}">Register</a></li>
             </ul>
           </li>
@@ -90,6 +93,55 @@
       </div>
     </div>
   </nav>
+
+ <!-- Slider Section -->
+<!-- Slider Section -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="{{ asset('home/image/msmelogo1.jpg') }}" class="d-block w-100 slider-img" alt="Slide 1">
+      <div class="carousel-caption text-start">
+        <h1 class="fw-bold">Linn</h1>
+        <p class="fs-4">IT, Mobile & Electronics Mart</p>
+        <a href="{{ route('contact#create') }}" class="btn btn-success rounded-pill px-4 py-2">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="{{ asset('home/image/msmelogo2.jpg') }}" class="d-block w-100 slider-img" alt="Slide 2">
+      <div class="carousel-caption text-start">
+        <h1 class="fw-bold">Empowering Businesses</h1>
+        <p class="fs-4">Grow with us through opportunities and support.</p>
+        <a href="#" class="btn btn-success rounded-pill px-4 py-2">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img src="{{ asset('home/image/msmelogo3.jpg') }}" class="d-block w-100 slider-img" alt="Slide 3">
+      <div class="carousel-caption text-start">
+        <h1 class="fw-bold">Join Our Community</h1>
+        <p class="fs-4">Connect with thousands of MSME members.</p>
+        <a href="{{route('register#index')}}" class="btn btn-success rounded-pill px-4 py-2">Get Started</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+
 
       <!-- Content -->
    <div class="content">
@@ -103,7 +155,7 @@
 
 
     <!-- Bottom Menu -->
-    <div class="bottom-menu">
+   <div class="bottom-under">
 
         <div class="row justify-content-center">
             <div class="col-md-8 p-3">
@@ -120,6 +172,7 @@
             </div>
         </div>
     </div>
+
 
 
 

@@ -38,7 +38,7 @@ class MemberController extends Controller
         'designations.designation as designation_name'
     )
     ->where('councils.designation_id', '!=', 1) // exclude designation_id = 1
-    ->paginate(5); // paginate 4 per page
+    ->get(); // paginate 4 per page
 
 
     $president = DB::table('councils')

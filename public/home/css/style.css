@@ -1,15 +1,14 @@
 /* General */
 body {
+    /* height: 100vh; */
     margin: 0;
     padding: 0;
-    font-family: "Open Sans", sans-serif;
+
     background-color: #fff;
     padding-top: 30px;
-     padding-bottom: 50px;
-    /* prevent overlap with fixed header & footer */
-    /* equal to navbar height */
-    /* equal to footer height */
+    padding-bottom: 50px;
 }
+
 
 /* Navbar */
 .navbar-nav .nav-link {
@@ -23,37 +22,6 @@ body {
     width: auto;
 }
 
-/* Footer */
-.bottom-menu {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: #1bbd36;
-    padding: 8px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* keep above content */
-    text-align: center;
-}
-
-.bottom-menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s ease;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.bottom-menu a:hover {
-    color: #e0e0e0;
-}
-
-.bottom-menu i {
-    font-size: 20px;
-    margin-bottom: 2px;
-}
 
 /* Card / Box animation */
 .box-1 {
@@ -223,32 +191,6 @@ body {
   width: 80%;
 }
 
-/* Slide animation */
-.slide {
-  flex: 0 0 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 20px;
-  animation: slideAnim 15s linear infinite;
-
-}
-
-.slide img {
-  width: 120px;
-  height: auto;
-  transition: transform 0.3s ease;
-   border-radius: 15px;
-}
-
-.slide img:hover {
-  transform: scale(1.2);
-}
-
-@keyframes slideAnim {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
 
 /* Button container position */
 .button-container {

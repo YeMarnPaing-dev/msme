@@ -57,15 +57,15 @@
   <div class="bg-image"></div>
 
   <div class="slider">
-    <div class="slide"><img src="{{asset('home/image/msmelogo1.jpg')}}" alt="logo 1"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo2.jpg')}}" alt="logo 2"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo3.jpg')}}" alt="Logo 3"></div>
-     <div class="slide"><img src="{{asset('home/image/msmelogo4.jpg')}}" alt="Logo 1"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo5.jpg')}}" alt="Logo 2"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo1.jpg')}}" alt="Logo 3"></div>
-     <div class="slide"><img src="{{asset('home/image/msmelogo2.jpg')}}" alt="Logo 1"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo3.jpg')}}" alt="Logo 2"></div>
-    <div class="slide"><img src="{{asset('home/image/msmelogo4.jpg')}}" alt="Logo 3"></div>
+    <div class="slide-update"><img src="{{asset('home/image/msmelogo1.jpg')}}" alt="logo 1"></div>
+    <div class="slide-update"><img src="{{asset('home/image/msmelogo2.jpg')}}" alt="logo 2"></div>
+    <div class="slide-update"><img src="{{asset('home/image/msmelogo3.jpg')}}" alt="Logo 3"></div>
+     <div class="slide-update"><img src="{{asset('home/image/msmelogo4.jpg')}}" alt="Logo 1"></div>
+    <div class="slide-update"><img src="{{asset('home/image/msmelogo5.jpg')}}" alt="Logo 2"></div>
+    <div class="slide-update"><img src="{{asset('home/image/msmelogo1.jpg')}}" alt="Logo 3"></div>
+     <div class="slide-update"><img src="{{asset('home/image/msmelogo2.jpg')}}" alt="Logo 1"></div>
+    <div class="slide-update"><img src="{{asset('home/image/msmelogo3.jpg')}}" alt="Logo 2"></div>
+    <div class="slide-update"><img src="{{asset('home/image/msmelogo4.jpg')}}" alt="Logo 3"></div>
   </div>
 
   <div class="button-container">

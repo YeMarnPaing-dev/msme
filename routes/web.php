@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContentController;
@@ -39,4 +40,5 @@ Route::post('contactUs',[ContactController::class,'store'])->name('contact#store
 Route::group(['prefix'=>'register'],function(){
 Route::get('form',[RegisterController::class,'index'])->name('register#index');
 Route::post('form/create',[RegisterController::class,'create'])->name('register#create');
+Route::get('login',[LoginController::class,'login'])->name('register#login');
 });

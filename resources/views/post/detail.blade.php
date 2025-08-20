@@ -35,16 +35,39 @@
 
             <div class="row g-4">
                 <div class="col-12">
-                    <div class="text-center fw-bold">RECENT EVENT</div>
-                    <hr>
-                   @foreach ($recent as $post)
-                      <div class="d-flex">
-                        <img class="workshop img-fluid" src="{{ asset('home/image/msme.png') }}" alt="">
-                        {{$post->title}}
-                    </div>
-                    <hr>
+                    <div class="text-center fw-bold mb-3">RECENT EVENT</div>
 
-                 @endforeach
+                                    @foreach ($recent as $post)
+                            <div data-bs-toggle="modal" data-bs-target="#myModal-{{$post->id}}" class="card glass-card mb-3">
+                                <div class="card-body d-flex align-items-center">
+                                    <img class="workshop img-fluid me-3" src="{{ asset('home/image/msme.png') }}"
+                                        alt="Event Image"
+                                        style="width:100px; height:60px; object-fit:cover; border-radius:10px;">
+                                    <h5 class="mb-0">{{ $post->title }}....</h5>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal-{{$post->id}}" tabindex="-1" aria-labelledby="modalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalLabel-{{$post->id}}">{{$post->title}}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                             {!! $post->detail_description !!}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success"
+                                                data-bs-dismiss="modal">Close</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
 
                 </div>
 
