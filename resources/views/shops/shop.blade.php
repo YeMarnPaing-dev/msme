@@ -40,7 +40,7 @@
 
 
 
-   <div class="mt-4  d-flex justify-content-center">
+ <div class="mt-4  d-flex justify-content-center">
     {{ $shops->links('pagination::bootstrap-5') }}
 </div>
 

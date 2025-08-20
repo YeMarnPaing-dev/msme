@@ -13,7 +13,8 @@ class ShopController extends Controller
         ->when($request->township_id, function($query) use ($request) {
             return $query->where('township_id', $request->township_id);
         })
-        ->paginate(12);
+        ->paginate(12)
+        ->appends($request->all());
         return view('shops.shop',compact('townships','shops'));
     }
 }
