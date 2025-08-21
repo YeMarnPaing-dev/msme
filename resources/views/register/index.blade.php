@@ -674,11 +674,6 @@
                 </div>
         </form>
     </div>
-
-
-
-
-
 @endsection
 @section('script')
 <script>

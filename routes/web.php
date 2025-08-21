@@ -41,4 +41,6 @@ Route::group(['prefix'=>'register'],function(){
 Route::get('form',[RegisterController::class,'index'])->name('register#index');
 Route::post('form/create',[RegisterController::class,'create'])->name('register#create');
 Route::get('login',[LoginController::class,'login'])->name('register#login');
+Route::post('login/user',[LoginController::class,'user'])->name('login#user');
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 });
