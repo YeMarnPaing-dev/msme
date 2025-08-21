@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('home/css/member.css')}}">
     <link rel="stylesheet" href="{{asset('home/css/council.css')}}">
     <link rel="stylesheet" href="{{asset('home/css/footer.css')}}">
+    <link rel="stylesheet" href="{{asset('home/css/font.css')}}">
 
     <title>@yield('title')</title>
 </head>

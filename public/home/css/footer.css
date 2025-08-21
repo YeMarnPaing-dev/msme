@@ -1,6 +1,14 @@
+/* @font-face {
+  font-family: 'Pyidaungsu';
+  src: url('/fonts/Pyidaungsu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
 body{
     height: 100vh;
-    font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+    /* font-family: 'Pyidaungsu', sans-serif; */
 }
 /* Footer */
 

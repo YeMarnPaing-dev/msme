@@ -1,3 +1,14 @@
+/* @font-face {
+  font-family: 'Pyidaungsu';
+  src: url('/fonts/Pyidaungsu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+body {
+  font-family: 'Pyidaungsu', sans-serif;
+}
+
 .header-menu {
     width: 100%;
     position: relative;

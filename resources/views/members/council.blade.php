@@ -6,7 +6,7 @@
 @section('Third', 'Executive Council')
 @section('content')
 
-<div class="association-title">
+<div  class="association-title">
     အငယ်စား၊ အသေးစားနှင့်အလတ်စား စီးပွားရေးလုပ်ငန်းရှင်များအသင်း <br>
     Micro, Small and Medium Enterprises Association
 </div>
