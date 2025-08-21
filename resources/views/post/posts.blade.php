@@ -24,9 +24,12 @@
                             <div class="description mt-2">
                                 {{ Str::limit(strip_tags($post->detail_description), 300) }}
 
-                                <a href="{{ route('post#detail', $post->id) }}">
-                                    <button class="btn btn-success btn-sm">Read More</button>
-                                </a>
+                                @auth
+                                    <a href="{{ route('post#detail', $post->id) }}">
+                                        <button class="btn btn-success btn-sm">Read More</button>
+                                    </a>
+                                @endauth
+
                             </div>
                         </div>
                     @endforeach
@@ -58,7 +61,8 @@
                         <div class="text-center fw-bold mb-3">RECENT EVENT</div>
 
                         @foreach ($posts as $post)
-                            <div data-bs-toggle="modal" data-bs-target="#myModal-{{$post->id}}" class="card glass-card mb-3">
+                            <div data-bs-toggle="modal" data-bs-target="#myModal-{{ $post->id }}"
+                                class="card glass-card mb-3">
                                 <div class="card-body d-flex align-items-center">
                                     <img class="workshop img-fluid me-3" src="{{ asset('home/image/msme.png') }}"
                                         alt="Event Image"
@@ -68,17 +72,18 @@
                             </div>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="myModal-{{$post->id}}" tabindex="-1" aria-labelledby="modalLabel"
-                                aria-hidden="true">
+                            <div class="modal fade" id="myModal-{{ $post->id }}" tabindex="-1"
+                                aria-labelledby="modalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="modalLabel-{{$post->id}}">{{$post->title}}</h5>
+                                            <h5 class="modal-title" id="modalLabel-{{ $post->id }}">{{ $post->title }}
+                                            </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                          {!! $post->detail_description !!}
+                                            {!! $post->detail_description !!}
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-success"

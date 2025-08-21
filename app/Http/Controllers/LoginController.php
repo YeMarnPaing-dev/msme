@@ -24,7 +24,7 @@ class LoginController extends Controller
             // Log user in using session
             Auth::loginUsingId($user->id);
             // return to_route('index#content')->with('success', 'You have successfully login!');
-            return redirect()->back()->with('success', 'Your Resgiration Form has been saved successfully!');
+            return to_route('index#content')->with('success', 'You have successfully login!');
         }
 
         return redirect()->back()->with('error', 'Credentail Do not match our records!');

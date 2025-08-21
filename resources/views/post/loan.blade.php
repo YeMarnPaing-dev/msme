@@ -24,9 +24,11 @@
                             </div>
                             <div class="description mt-3">
                                 {{ Str::limit(strip_tags($post->description), 200) }}
-                                <a href="{{ route('post#detail_loan', $post->id) }}">
+                                @auth
+                                    <a href="{{ route('post#detail_loan', $post->id) }}">
                                     <button class="btn btn-success btn-sm">Read More</button>
                                 </a>
+                                @endauth
                             </div>
                         </div>
                     @endforeach
