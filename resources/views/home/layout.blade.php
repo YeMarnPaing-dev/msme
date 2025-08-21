@@ -17,6 +17,9 @@
 
 
     <title>@yield('title')</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('home/image/icon.png') }}">
 </head>
 
 <body>
