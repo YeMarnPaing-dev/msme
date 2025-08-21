@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
 
@@ -95,11 +96,7 @@
                             <li><a class="dropdown-item" href="{{ route('register#login') }}">Login</a></li>
                             <li><a class="dropdown-item" href="{{ route('register#index') }}">Register</a></li>
                             @auth
-                                <li>
-                                    <form action="" method="">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">Logout</button>
-                                    </form>
+                                <li> <button type="submit" class="logout dropdown-item">Logout</button>
                                 </li>
                             @endauth
                         </ul>
@@ -180,13 +177,37 @@
             return false;
         });
 
-        //      Swal.fire({
-        //     icon: 'success',
-        //     title: 'Success',
-        //     text: '{{ session('success') }}',
-        //     showConfirmButton: false,
-        //     timer: 2000
-        // })
+        $('.logout').on('click', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: "Are you sure?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, Logout!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                   $.ajax({
+                    url: "{{ route('logout') }}",
+                    type: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function () {
+                        window.location.href = "{{route('index#content')}}";
+                    },
+                    error: function () {
+                        Swal.fire("Error", "Logout failed. Please try again.", "error");
+                    }
+                });
+                }
+            });
+
+
+        })
+
+
     })
 </script>
 @yield('script')

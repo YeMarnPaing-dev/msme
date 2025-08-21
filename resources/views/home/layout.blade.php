@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
 
@@ -95,12 +96,9 @@
                         <ul class="dropdown-menu" aria-labelledby="accountDropdown">
                             <li><a class="dropdown-item" href="{{ route('register#login') }}">Login</a></li>
                             <li><a class="dropdown-item" href="{{ route('register#index') }}">Register</a></li>
-                            @auth
+                             @auth
                                 <li>
-                                    <form id="logout-form" action="" method="">
-                                        @csrf
-                                        <button type="button" class="dropdown-item" id="logout-btn">Logout</button>
-                                    </form>
+                                     <button type="submit" class="logout-btn dropdown-item">Logout</button>
                                 </li>
                             @endauth
                         </ul>
@@ -201,31 +199,14 @@
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('home/js/script.js') }}"></script>
 
+<script>
 
+</script>
+@yield('script')
 
 </html>
 
-<script>
-    $(document).ready(function() {
-        $('#logout-btn').on('click', function(e) {
-            e.preventDefault();
-            console.log('Hi This is testing');
 
-            // Swal.fire({
-            //     title: 'Are you sure?',
-            //     text: "You will be logged out of your account.",
-            //     icon: 'warning',
-            //     showCancelButton: true,
-            //     confirmButtonColor: '#3085d6',
-            //     cancelButtonColor: '#d33',
-            //     confirmButtonText: 'Yes, logout'
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
-            //         $('#logout-form').submit();
-            //     }
-            // });
-        });
-    });
-</script>
