@@ -99,20 +99,14 @@
 
                     <div class="col-12">
                         <div class="text-center fw-bold">OUR GALLERY</div>
-                        <div class="row g-2 mt-3 text-center">
-                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
-                                    alt=""></div>
-                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
-                                    alt=""></div>
-                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
-                                    alt=""></div>
-                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
-                                    alt=""></div>
-                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
-                                    alt=""></div>
-                            <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/msme.png') }}"
-                                    alt=""></div>
-                        </div>
+                       <div  class="row g-2 mt-3 text-center">
+                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/activities/a1.jpg') }}" alt=""></div>
+                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/activities/a2.jpg') }}" alt=""></div>
+                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/activities/a4.jpg') }}" alt=""></div>
+                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/activities/a5.jpg') }}" alt=""></div>
+                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/activities/a7.jpg') }}" alt=""></div>
+                        <div class="col-4"><img class="gallery img-fluid" src="{{ asset('home/image/activities/q3.jpg') }}" alt=""></div>
+                    </div>
                     </div>
                 </div>
 

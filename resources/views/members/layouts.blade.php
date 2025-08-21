@@ -18,6 +18,11 @@
 
     <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="{{ asset('home/image/icon.png') }}">
+    <style>
+        .gallery {
+            aspect-ratio: 1.5;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +56,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="memberDropdown">
                             <li><a class="dropdown-item" href="{{ route('index#member') }}">Member List</a></li>
-                            <li><a class="dropdown-item" href="{{ route('council#member') }}">Executive Council</a></li>
+                            <li><a class="dropdown-item" href="{{ route('council#member') }}">Executive Council</a>
+                            </li>
                         </ul>
                     </li>
 
@@ -195,19 +201,20 @@
                 confirmButtonText: "Yes, Logout!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                   $.ajax({
-                    url: "{{ route('logout') }}",
-                    type: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}"
-                    },
-                    success: function () {
-                        window.location.href = "{{route('index#content')}}";
-                    },
-                    error: function () {
-                        Swal.fire("Error", "Logout failed. Please try again.", "error");
-                    }
-                });
+                    $.ajax({
+                        url: "{{ route('logout') }}",
+                        type: "POST",
+                        data: {
+                            _token: "{{ csrf_token() }}"
+                        },
+                        success: function() {
+                            window.location.href = "{{ route('index#content') }}";
+                        },
+                        error: function() {
+                            Swal.fire("Error", "Logout failed. Please try again.",
+                                "error");
+                        }
+                    });
                 }
             });
 
