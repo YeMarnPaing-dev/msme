@@ -93,8 +93,14 @@
                             Account
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                            <li><a class="dropdown-item" href="{{ route('register#login') }}">Login</a></li>
-                            <li><a class="dropdown-item" href="{{ route('register#index') }}">Register</a></li>
+                            @guest
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('register#login') }}">Login</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('register#index') }}">Register</a>
+                                </li>
+                            @endguest
                             @auth
                                 <li> <button type="submit" class="logout dropdown-item">Logout</button>
                                 </li>

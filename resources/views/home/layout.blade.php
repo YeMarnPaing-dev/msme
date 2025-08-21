@@ -94,11 +94,18 @@
                             Account
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="accountDropdown">
-                            <li><a class="dropdown-item" href="{{ route('register#login') }}">Login</a></li>
-                            <li><a class="dropdown-item" href="{{ route('register#index') }}">Register</a></li>
-                             @auth
+                            @guest
                                 <li>
-                                     <button type="submit" class="logout-btn dropdown-item">Logout</button>
+                                    <a class="dropdown-item" href="{{ route('register#login') }}">Login</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('register#index') }}">Register</a>
+                                </li>
+                            @endguest
+
+                            @auth
+                                <li>
+                                    <button type="submit" class="logout dropdown-item">Logout</button>
                                 </li>
                             @endauth
                         </ul>
@@ -201,12 +208,47 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="{{ asset('home/js/script.js') }}"></script>
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+    $(document).ready(function() {
 
+
+        $('.logout').on('click', function(e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: "Are you sure?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, Logout!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                   $.ajax({
+                    url: "{{ route('logout') }}",
+                    type: "POST",
+                    data: {
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function () {
+                        window.location.href = "{{route('index#content')}}";
+                    },
+                    error: function () {
+                        Swal.fire("Error", "Logout failed. Please try again.", "error");
+                    }
+                });
+                }
+            });
+
+
+        })
+
+
+    })
 </script>
 @yield('script')
 
 </html>
-
-
