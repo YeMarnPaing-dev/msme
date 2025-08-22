@@ -61,7 +61,9 @@
                         <div class="text-center fw-bold mb-3">RECENT LOAN</div>
 
                         @foreach ($loan as $post)
-                            <div data-bs-toggle="modal" data-bs-target="#myModal-{{ $post->id }}"" class="card glass-card mb-3">
+                            <div @auth
+                                data-bs-toggle="modal" data-bs-target="#myModal-{{ $post->id }}"
+                            @endauth class="card glass-card mb-3">
                                 <div class="card-body d-flex align-items-center">
                                     <img class="workshop img-fluid me-3" src="{{ asset('home/image/msme.png') }}"
                                         alt="Event Image"

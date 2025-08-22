@@ -1,0 +1,47 @@
+/* Default: Bootstrap handles mobile (1) and tablet (2) */
+.custom-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 576px) {
+    .custom-col {
+        flex: 0 0 50%;
+        max-width: 50%; /* 2 per row */
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1600px) {
+    .custom-col {
+        flex: 0 0 33.3333%;
+        max-width: 33.3333%; /* 3 per row */
+    }
+}
+
+@media (min-width: 1601px) {
+    .custom-col {
+        flex: 0 0 25%;
+        max-width: 25%; /* 4 per row */
+    }
+}
+.box-1 {
+    font-size: 14px; /* default mobile */
+}
+
+@media (min-width: 576px) {
+    .box-1 {
+        font-size: 16px; /* tablets */
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1600px) {
+    .box-1 {
+        font-size: 18px; /* mid screens */
+    }
+}
+
+@media (min-width: 1601px) {
+    .box-1 {
+        font-size: 20px; /* large desktop */
+    }
+}

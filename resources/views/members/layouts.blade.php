@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('home/css/council.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/font.css') }}">
+    <link rel="stylesheet" href="{{asset('home/css/content.css')}}">
 
     <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="{{ asset('home/image/icon.png') }}">
@@ -56,7 +57,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="memberDropdown">
                             <li><a class="dropdown-item" href="{{ route('index#member') }}">Member List</a></li>
-                            <li><a class="dropdown-item" href="{{ route('council#member') }}">Executive Council</a>
+                            @auth
+                                <li><a class="dropdown-item" href="{{ route('council#member') }}">Executive Council</a>
+                            @endauth
                             </li>
                         </ul>
                     </li>
@@ -82,15 +85,12 @@
                     </li>
 
                     <!-- About dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="{{ route('about#us') }}">About Us</a></li>
-                            <li><a class="dropdown-item" href="{{ route('contact#create') }}">Contact Us</a></li>
-                        </ul>
+                      <li class="nav-item ">
+                            <a class="nav-link" href="{{ route('about#us') }}">About Us</a>
+
+
+                    <li class="nav-item ">
+                            <a class="nav-link" href="{{ route('contact#create') }}">Contact Us</a></li>
                     </li>
 
                     <!-- Account dropdown -->
@@ -126,11 +126,11 @@
     <div class="header-menu">
         <div class="header-content mt-4">
             <h1>@yield('heading')</h1>
-            <div class="icon">
+            {{-- <div class="icon">
                 <a href="{{ route('index#content') }}"> <i class="fa-solid fa-house"></i> Home</a>
                 <a href="javascript:void(0);" class="back"> <i class="fa-solid fa-angles-right"></i>Back</a>
                 <i class="fa-solid fa-angles-right"></i> @yield('Third')
-            </div>
+            </div> --}}
         </div>
     </div>
 

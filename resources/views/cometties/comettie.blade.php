@@ -10,7 +10,7 @@
     <div class="row text-center mt-2">
 
           @foreach ($cmt as $cm)
-            <div class=" col-md-3 mt-3">
+            <div class=" col-12 col-sm-6 custom-col mt-3">
                 <div class="member-card">
                     <img style="border-radius: 5px; width:100%" src="{{ asset('home/image/msme (1).png') }}" alt="">
                     <p class="mt-3"><i class="fa-solid fs-3 text-success fa-rocket"></i>{{$cm->cmt_name}}</p>
@@ -23,9 +23,7 @@
 
 </section>
 
-   <div class="mt-4  d-flex justify-content-center">
-    {{ $cmt->links('pagination::bootstrap-5') }}
-</div>
+
 
 
 @endsection

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('home/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/font.css') }}">
+    <link rel="stylesheet" href="{{asset('home/css/content.css')}}">
 
 
     <title>@yield('title')</title>
@@ -54,7 +55,9 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="memberDropdown">
                             <li><a class="dropdown-item" href="{{ route('index#member') }}">Member List</a></li>
-                            <li><a class="dropdown-item" href="{{ route('council#member') }}">Executive Council</a></li>
+                           @auth
+                                <li><a class="dropdown-item" href="{{ route('council#member') }}">Executive Council</a></li>
+                           @endauth
                         </ul>
                     </li>
 
@@ -79,15 +82,12 @@
                     </li>
 
                     <!-- About dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            About
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="{{ route('about#us') }}">About Us</a></li>
-                            <li><a class="dropdown-item" href="{{ route('contact#create') }}">Contact Us</a></li>
-                        </ul>
+                    <li class="nav-item ">
+                            <a class="nav-link" href="{{ route('about#us') }}">About Us</a>
+
+
+                    <li class="nav-item ">
+                            <a class="nav-link" href="{{ route('contact#create') }}">Contact Us</a></li>
                     </li>
 
                     <!-- Account dropdown -->
@@ -119,14 +119,14 @@
         </div>
     </nav>
 
+
     <!-- Slider Section -->
-    <!-- Slider Section -->
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="heroCarousel"  class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
 
             <!-- Slide 1 -->
             <div class="carousel-item active">
-                <img src="{{ asset('home/image/msmelogo1.jpg') }}" class="d-block w-100 slider-img" alt="Slide 1">
+                <img style="height: 80vh;" src="{{ asset('home/image/banner/kwee htike.jpg') }}" class="d-block w-100 slider-img" alt="Slide 1">
                 <div class="carousel-caption text-start">
                     <h1 class="fw-bold">MSME</h1>
                     <p class="fs-4">Myanmar Small Medium Entrepreur</p>
@@ -137,7 +137,7 @@
 
             <!-- Slide 2 -->
             <div class="carousel-item">
-                <img src="{{ asset('home/image/msmelogo2.jpg') }}" class="d-block w-100 slider-img" alt="Slide 2">
+                <img style="height: 80vh;" src="{{ asset('home/image/banner/k-P1240787-2.jpg') }}" class="d-block w-100 slider-img" alt="Slide 2">
                 <div class="carousel-caption text-start">
                     <h1 class="fw-bold">Empowering Businesses</h1>
                     <p class="fs-4">Grow with us through opportunities and support.</p>
@@ -147,7 +147,7 @@
 
             <!-- Slide 3 -->
             <div class="carousel-item">
-                <img src="{{ asset('home/image/msmelogo3.jpg') }}" class="d-block w-100 slider-img" alt="Slide 3">
+                <img style="height: 80vh;" src="{{ asset('home/image/banner/pagoda.jpg') }}" class="d-block w-100 slider-img" alt="Slide 3">
                 <div class="carousel-caption text-start">
                     <h1 class="fw-bold">Join Our Community</h1>
                     <p class="fs-4">Connect with thousands of MSME members.</p>

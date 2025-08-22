@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class ComettieController extends Controller
 {
  public function cmt(){
-    $cmt = DB::table('cmt')->paginate(8);
+    $cmt = DB::table('cmt')->get();
 return view('cometties.comettie',compact('cmt'));
     }
 

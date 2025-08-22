@@ -42,7 +42,7 @@
             </div>
 
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary rounded-pill">
+              <button type="submit" class="btn btn-success rounded-pill">
                 <i class="fa-solid fa-paper-plane me-2"></i> Send Message
               </button>
             </div>

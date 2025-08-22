@@ -6,9 +6,11 @@
 <section class="committee container my-4">
   <div class="row g-3">
  @foreach($comettie as $cmt)
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="box-1">{{ $cmt->cmt_name }}
-
+       <div class="col-12 col-sm-6 custom-col">
+            <div class="box-1 p-3 mb-3 border rounded">
+                <p class="fs-6 fs-sm-6 fs-md-5 fs-lg-4 fs-xl-3">
+                    {{ $cmt->cmt_name }}
+                </p>
             </div>
         </div>
     @endforeach
