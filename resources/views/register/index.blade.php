@@ -10,7 +10,7 @@
             @csrf
             <!-- အမည် -->
             <div class="mb-3 row">
-                <h3 class="mb-3">(၁) မှတ်ပုံတင်ရန် အဆိုပြုသူ</h3>
+                <h3 class="mb-3"> မှတ်ပုံတင်ရန် အဆိုပြုသူ</h3>
                 <label class="col-sm-3 col-form-label">(က) လုပ်ငန်းရှင်</label>
                 <div class="col-sm-9">
                     <input type="text" name="name_mm" value="{{ old('name_mm') }}"
@@ -242,9 +242,20 @@
                 </div>
             </div>
 
+             <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">(ဍ)လျှို့ဝှက်နံပတ်</label>
+                <div class="col-sm-9">
+                    <input type="password"  name="password" placeholder="...."
+                        class="form-control  @error('password') is-invalid @enderror">
+                    @error('password')
+                        <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+
             <hr>
 
-            <div class="mb-3 row">
+            {{-- <div class="mb-3 row">
                 <h3 class="mb-3">(၂) မှတ်ပုံတင်မည့် စီးပွားရေးလုပ်ငန်း</h3>
 
 
@@ -318,8 +329,8 @@
                     </select>
                 </div>
             </div>
-            <hr>
-
+            <hr> --}}
+{{--
             <div class="mb-3 row">
                 <h3 class="mb-3">(၃) လုပ်ငန်း လုပ်ကိုင်သည့် နေရာ</h3>
 
@@ -434,8 +445,8 @@
 
             </div>
 
-            <hr>
-
+            <hr> --}}
+{{--
             <div class="mb-3 row">
                 <h3 class="mb-3">(၅) ထုတ်လုပ်မှုလုပ်ငန်းဖြစ်ပါက</h3>
 
@@ -539,10 +550,10 @@
             <hr>
 
             <div class="mb-3 row">
-                <h3 class="mb-3">(၉ ) အလုပ်သမားခန့်ထားမှု (လျာထားချက်)</h3>
+                <h3 class="mb-3">(၉ ) အလုပ်သမားခန့်ထားမှု (လျာထားချက်)</h3> --}}
 
 
-
+{{--
                 <label class="col-sm-3 col-form-label">(က) အုပ်ချုပ်သူ</label>
 
                 <div class="col-sm-9">
@@ -662,7 +673,7 @@
                             <span class="invalid-feedback">{{ $message }}</span>
                         @enderror
                     </div>
-                </div>
+                </div> --}}
 
 
 
