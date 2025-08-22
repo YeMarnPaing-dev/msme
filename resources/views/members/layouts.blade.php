@@ -51,14 +51,14 @@
 
                     <!-- Member dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="memberDropdown" role="button"
+                        <a class="nav-link dropdown-toggle @yield('list-active')" href="#" id="memberDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Member
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="memberDropdown">
-                            <li><a class="dropdown-item" href="{{ route('index#member') }}">Member List</a></li>
+                            <li><a class="dropdown-item " href="{{ route('index#member') }}">Member List</a></li>
                             @auth
-                                <li><a class="dropdown-item" href="{{ route('council#member') }}">Executive Council</a>
+                                <li><a class="dropdown-item " href="{{ route('council#member') }}">Executive Council</a>
                             @endauth
                             </li>
                         </ul>
@@ -66,31 +66,31 @@
 
                     <!-- Post dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="postDropdown" role="button"
+                        <a class="nav-link dropdown-toggle @yield('posts-active')" href="#" id="postDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Post
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="postDropdown">
-                            <li><a class="dropdown-item" href="{{ route('post#index') }}">Posts</a></li>
-                            <li><a class="dropdown-item" href="{{ route('post#loan') }}">Loan</a></li>
+                            <li><a class="dropdown-item " href="{{ route('post#index') }}">Posts</a></li>
+                            <li><a class="dropdown-item " href="{{ route('post#loan') }}">Loan</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('shop#index') }}">Discount Shops</a>
+                        <a class="nav-link  @yield('shop-active')" href="{{ route('shop#index') }}">Discount Shops</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('comettie#index') }}">Committee</a>
+                        <a class="nav-link @yield('comettie-active')" href="{{ route('comettie#index') }}">Committee</a>
                     </li>
 
                     <!-- About dropdown -->
                       <li class="nav-item ">
-                            <a class="nav-link" href="{{ route('about#us') }}">About Us</a>
+                            <a class="nav-link @yield('about-active')" href="{{ route('about#us') }}">About Us</a>
 
 
                     <li class="nav-item ">
-                            <a class="nav-link" href="{{ route('contact#create') }}">Contact Us</a></li>
+                            <a class="nav-link @yield('contact-active')" href="{{ route('contact#create') }}">Contact Us</a></li>
                     </li>
 
                     <!-- Account dropdown -->

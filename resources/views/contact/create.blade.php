@@ -1,5 +1,6 @@
 @extends('members.layouts')
 @section('heading','Contact Us')
+@section('contact-active','active')
 @section('title','Contact Us')
 
 @section('content')

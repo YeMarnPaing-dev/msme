@@ -1,7 +1,7 @@
 @extends('members.layouts')
 @section('heading', 'LOAN DETAIL')
 @section('title', 'Loan Detail')
-
+@section('loan-active','active')
 @section('head', 'Loans')
 @section('Third', 'Loan Detail')
 @section('content')

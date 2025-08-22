@@ -1,5 +1,6 @@
 @extends('members.layouts')
 @section('heading', 'POST')
+@section('posts-active','active')
 @section('title', 'Post')
 
 

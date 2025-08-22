@@ -44,55 +44,55 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('index#content') }}">Home</a>
+                        <a class="nav-link @yield('home-active') " href="{{ route('index#content') }}">Home</a>
                     </li>
 
                     <!-- Member dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="memberDropdown" role="button"
+                        <a class="nav-link @yield('member-active') dropdown-toggle" href="#" id="memberDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Member
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="memberDropdown">
-                            <li><a class="dropdown-item" href="{{ route('index#member') }}">Member List</a></li>
+                            <li><a class="dropdown-item @yield('list-active')" href="{{ route('index#member') }}">Member List</a></li>
                            @auth
-                                <li><a class="dropdown-item" href="{{ route('council#member') }}">Executive Council</a></li>
+                                <li><a class="dropdown-item @yield('council-active')" href="{{ route('council#member') }}">Executive Council</a></li>
                            @endauth
                         </ul>
                     </li>
 
                     <!-- Post dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="postDropdown" role="button"
+                        <a class="nav-link dropdown-toggle @yield('posts-active')" href="#" id="postDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Post
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="postDropdown">
-                            <li><a class="dropdown-item" href="{{ route('post#index') }}">Posts</a></li>
-                            <li><a class="dropdown-item" href="{{ route('post#loan') }}">Loan</a></li>
+                            <li><a class="dropdown-item @yield('posts-active')" href="{{ route('post#index') }}">Posts</a></li>
+                            <li><a class="dropdown-item @yield('loan-active')" href="{{ route('post#loan') }}">Loan</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('shop#index') }}">Discount Shops</a>
+                        <a class="nav-link @yield('shop-active')" href="{{ route('shop#index') }}">Discount Shops</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('comettie#index') }}">Committee</a>
+                        <a class="nav-link @yield('comettie-active')" href="{{ route('comettie#index') }}">Committee</a>
                     </li>
 
                     <!-- About dropdown -->
                     <li class="nav-item ">
-                            <a class="nav-link" href="{{ route('about#us') }}">About Us</a>
+                            <a class="nav-link @yield('about-active')" href="{{ route('about#us') }}">About Us</a>
 
 
                     <li class="nav-item ">
-                            <a class="nav-link" href="{{ route('contact#create') }}">Contact Us</a></li>
+                            <a class="nav-link @yield('contact-active')" href="{{ route('contact#create') }}">Contact Us</a></li>
                     </li>
 
                     <!-- Account dropdown -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
+                        <a class="nav-link dropdown-toggle @yield('account-active')" href="#" id="accountDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Account
                         </a>
@@ -127,33 +127,33 @@
             <!-- Slide 1 -->
             <div class="carousel-item active">
                 <img style="height: 80vh;" src="{{ asset('home/image/banner/kwee htike.jpg') }}" class="d-block w-100 slider-img" alt="Slide 1">
-                <div class="carousel-caption text-start">
+                {{-- <div class="carousel-caption text-start">
                     <h1 class="fw-bold">MSME</h1>
                     <p class="fs-4">Myanmar Small Medium Entrepreur</p>
                     <a href="{{ route('contact#create') }}" class="btn btn-success rounded-pill px-4 py-2">Contact
                         Us</a>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Slide 2 -->
             <div class="carousel-item">
                 <img style="height: 80vh;" src="{{ asset('home/image/banner/k-P1240787-2.jpg') }}" class="d-block w-100 slider-img" alt="Slide 2">
-                <div class="carousel-caption text-start">
+                {{-- <div class="carousel-caption text-start">
                     <h1 class="fw-bold">Empowering Businesses</h1>
                     <p class="fs-4">Grow with us through opportunities and support.</p>
                     <a href="#" class="btn btn-success rounded-pill px-4 py-2">Learn More</a>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Slide 3 -->
             <div class="carousel-item">
                 <img style="height: 80vh;" src="{{ asset('home/image/banner/pagoda.jpg') }}" class="d-block w-100 slider-img" alt="Slide 3">
-                <div class="carousel-caption text-start">
+                {{-- <div class="carousel-caption text-start">
                     <h1 class="fw-bold">Join Our Community</h1>
                     <p class="fs-4">Connect with thousands of MSME members.</p>
                     <a href="{{ route('register#index') }}" class="btn btn-success rounded-pill px-4 py-2">Get
                         Started</a>
-                </div>
+                </div> --}}
             </div>
 
         </div>
@@ -248,6 +248,8 @@
 
 
         })
+
+
 
 
     })

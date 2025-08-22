@@ -1,5 +1,6 @@
 @extends('members.layouts')
 @section('heading', 'EXECUTIVE COUNCIL')
+@section('list-active','active')
 @section('title', 'Executive Council')
 
 @section('head', 'Executive Council')

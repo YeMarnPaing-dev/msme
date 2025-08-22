@@ -1,5 +1,6 @@
 @extends('home.layout')
 @section('title','MSME')
+@section('home-active', 'active')
 
 @section('content')
 

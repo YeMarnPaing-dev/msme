@@ -1,5 +1,6 @@
 @extends('members.layouts')
 @section('heading', 'MEMBER')
+@section('list-active','active')
 @section('title', 'Members')
 
 @section('content')

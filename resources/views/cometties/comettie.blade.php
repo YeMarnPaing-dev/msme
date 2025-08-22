@@ -1,5 +1,6 @@
 @extends('members.layouts')
 @section('heading','Comettie')
+@section('comettie-active','active')
 @section('title','Comettie')
 
 @section('content')
