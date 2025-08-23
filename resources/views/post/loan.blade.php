@@ -28,7 +28,7 @@
                             <!-- Description -->
                             <p class="text-muted mt-2 mb-0">
                                 {{ Str::limit(strip_tags($post->description), 200) }}
-                                <a href="{{ route('post#detail', $post->id) }}"
+                                <a href="{{ route('post#detail_loan', $post->id) }}"
                                    class="text-success fw-semibold ms-1 text-decoration-none">
                                     Read More <i class="fa-solid fa-angles-right"></i>
                                 </a>

@@ -40,6 +40,7 @@ return view('post.detail',compact('posts','recent'));
         ->take(2)
         ->get();
 
+
         return view('post.loan_detail',compact('loans','recent'));
 
     }
