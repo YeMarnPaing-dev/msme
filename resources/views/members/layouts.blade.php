@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('home/css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('home/css/font.css') }}">
     <link rel="stylesheet" href="{{asset('home/css/content.css')}}">
+    <link rel="stylesheet" href="{{asset('home/css/select.css')}}">
 
     <title>@yield('title')</title>
     <link rel="icon" type="image/png" href="{{ asset('home/image/icon.png') }}">

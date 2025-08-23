@@ -14,34 +14,34 @@
 
 <div class="select-wrapper">
    <form action="{{ route('shop#index') }}" method="GET">
-       <select name="township_id" id="township" onchange="this.form.submit()">
-           <option value="">Select Township</option>
-           @foreach($townships as $township)
-               <option value="{{ $township->id }}"
-                   {{ request('township_id') == $township->id ? 'selected' : '' }}>
-                   {{ $township->name }}
-               </option>
-           @endforeach
-       </select>
+      <select name="township_id" id="township" onchange="this.form.submit()">
+        <option value="">Select Township</option>
+        @foreach($townships as $township)
+            <option value="{{ $township->id }}"
+                {{ request('township_id') == $township->id ? 'selected' : '' }}>
+                {{ $township->name }}
+            </option>
+        @endforeach
+      </select>
    </form>
 </div>
 
-<section class="member-list">
 
-      <div class="card-container">
+<section class="member-list">
+   <div class="card-container">
        @forelse ($shops as $shop)
-       <a href="{{route('shop#detail',$shop->id)}}" style="text-decoration: none">
-           <div class="shop-card">
-               <img src="{{ asset('home/image/shops/noshopphoto.png') }}" alt="">
-               <p class="text-muted">{{ $shop->shop_name }}</p>
-           </div>
+           <a href="{{route('shop#detail',$shop->id)}}" style="text-decoration: none">
+               <div class="shop-card">
+                   <img src="{{ asset('home/image/shops/noshopphoto.png') }}" alt="">
+                   <p class="text-muted">{{ $shop->shop_name }}</p>
+               </div>
            </a>
        @empty
            <p>No shops available for this township.</p>
        @endforelse
    </div>
-
 </section>
+
 
 
 

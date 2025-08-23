@@ -20,7 +20,7 @@ class RegisterController extends Controller
     public function create(Request $request){
         $this->validateData($request);
 
-        dd($request->all());
+        // dd($request->all());
          $userId = DB::table('users')->insertGetId([
         'name_mm' => $request->name_mm,
         'name_en' => $request->name_eng,
@@ -38,7 +38,7 @@ class RegisterController extends Controller
         'religion' => $request->religion,
         'education' => $request->education,
         'gender' => $request->gender,
-        'birthday' => $request->birthday,
+        'dob' => $request->birthday,
         'township_id' => $request->town,
         'address' => $request->address,
         'phone' => $request->phone,

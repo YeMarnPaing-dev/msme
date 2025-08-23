@@ -1,6 +1,6 @@
 @extends('members.layouts')
 @section('heading', 'POST')
-@section('posts-active','active')
+@section('posts-active', 'active')
 @section('title', 'Post')
 
 
@@ -25,31 +25,17 @@
                             <div class="description mt-2">
                                 {{ Str::limit(strip_tags($post->detail_description), 300) }}
 
-                                @auth
-                                    <a href="{{ route('post#detail', $post->id) }}">
-                                        <button class="btn btn-success btn-sm">Read More</button>
-                                    </a>
-                                @endauth
+
+                                <a href="{{ route('post#detail', $post->id) }}">
+                                    <button class="btn btn-success btn-sm">Read More</button>
+                                </a>
+
 
                             </div>
                         </div>
                     @endforeach
 
-                    <!-- Second Post -->
-                    {{-- <div class="col-12">
-                    <div class="btn btn-success">06 Feb 2025</div>
-                    <div class="mt-3 fw-bold">
-                        စက်မှု SME Card ကို Online မှတဆင့် လျှောက်ပေးခြင်း နှင့် ပြုလုပ်ပုံအဆင့်အဆင့် တို့ကို
-                        လုပ်ငန်းရှင်များအား နားလည်သိရှိစေရန် ရှင်းလင်းပြောကြားပွဲ
-                    </div>
-                    <div class="description mt-3">
-                        {{ Str::limit('MSME Association အသင်းတို့ပူး​ပေါင်း၍ ၁၁.၂.၂၀၂၀ ရက်(အင်္ဂါနေ့) နေ့တွင် စက်မှု SME Card ကို Online မှတဆင့် ယခုလျှေက် ယခုSME Card ယူစနစ်ဖြင့် လျှောက်ပေးခြင်း နှင့် ပြုလုပ်ပုံအဆင့်အဆင့် တို့ကို လုပ်ငန်းရှင်များအား နားလည်သိရှိစေရန် ရှင်းလင်းပြောကြားပေးမည် ဖြစ်ပါသောကြောင့် MSME Association ရုံးခန်းသို့ ကြွရောက်ပေးရန် လေးစားစွာဖြင့် ဖိတ်ကြားအပ်ပါသည်ခင်ဗျာ။ လုပ်ငန်းရှင်များအနေဖြင့် ယူဆောင်လာရမည့် စာရွက်စာတမ်းများ ၁။ လိုင်စင် ဓာတ်ပုံ ၂။ မှတ်ပုံတင် မိတ္တူ ၃။ အိမ်ထောင်စုဇယား မိတ္တူ ၄။ လုပ်ငန်းလိုင်စင် (၂၀၁၉-၂၀၂၀) MSME ရုံးခန်း - (ပ/၁၈၉) သပြေကုန်း ပွဲရုံတန်း၊ ဇဗ္ဗူသီရိမြို့နယ်၊
-                         နေပြည်တော်။​အသေးစိတ်သိရှိလိုပါက ချေးငွေရေးရာကော်မတီ ဥက္ကဌ ဦးအောင်ဇော်ဦး ဖုန်း - 09400886611 MSME Association ပြန်ကြားရေးကော်မတီ', 300) }}
-                          <a href="{{route('post#detail')}}">
-                            <button class="btn btn-success btn-sm">Read More</button>
-                        </a>
-                    </div>
-                </div> --}}
+
 
                 </div>
             </div>
@@ -62,8 +48,7 @@
                         <div class="text-center fw-bold mb-3">RECENT EVENT</div>
 
                         @foreach ($posts as $post)
-                            <div @auth
-data-bs-toggle="modal" data-bs-target="#myModal-{{ $post->id }}" @endauth
+                            <div data-bs-toggle="modal" data-bs-target="#myModal-{{ $post->id }}"
                                 class="card glass-card mb-3">
                                 <div class="card-body d-flex align-items-center">
                                     <img class="workshop img-fluid me-3" src="{{ asset('home/image/msme.png') }}"

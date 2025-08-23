@@ -13,7 +13,7 @@
 
 <section class="direction">
 <div class="row justify-content-center">
-<div class="col-md-6 right d-flex flex-column justify-content-center align-items-center text-center" style="height: 500px;">
+<div class="col-12 col-lg-6 right d-flex flex-column justify-content-center align-items-center text-center" style="height: 500px;">
     <div>
         <h3 class="about">About Us</h3>
         <img class="image-msme" src="{{asset('home/image/msme (1).png')}}" alt="" class="img-fluid my-3">
@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="col-12 col-md-6">
+<div class="col-12 col-lg-6">
     <div>
         <h3 class="team">အသင်းကြီး၏ ရည်ရွယ်ချက်များ</h3>
         <div class="mt-3">
