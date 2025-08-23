@@ -169,7 +169,7 @@
                 <h4 class="fw-bold text-center text-success mb-3">📌 Recent posts</h4>
                 <div class="list-group shadow-sm">
                     @foreach ($posts as $post)
-                        <div @auth data-bs-toggle="modal" data-bs-target="#myModal-{{ $post->id }}" @endauth
+                        <div  data-bs-toggle="modal" data-bs-target="#myModal-{{ $post->id }}"
                              class="list-group-item list-group-item-action d-flex align-items-center border-0 mb-2 shadow-sm rounded-3"
                              style="cursor:pointer;">
                             <img class="img-fluid rounded me-3"

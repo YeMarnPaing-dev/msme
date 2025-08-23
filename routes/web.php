@@ -21,9 +21,9 @@ Route::get('council',[MemberController::class,'council'])->name('council#member'
 
 Route::group(['prefix'=>'post'],function(){
     Route::get('index',[PostController::class,'index'])->name('post#index');
-    Route::get('detail/{id}',[PostController::class,'detail'])->name('post#detail')->middleware('authmiddleware');
+    Route::get('detail/{id}',[PostController::class,'detail'])->name('post#detail');
     Route::get('loan',[PostController::class,'loan'])->name('post#loan');
-    Route::get('Loandetail/{id}',[PostController::class,'Loandetail'])->name('post#detail_loan')->middleware('authmiddleware');
+    Route::get('Loandetail/{id}',[PostController::class,'Loandetail'])->name('post#detail_loan');
 });
 
 Route::get('shops',[ShopController::class,'shop'])->name('shop#index');
