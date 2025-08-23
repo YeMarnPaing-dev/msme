@@ -22,6 +22,7 @@ class MemberController extends Controller
        $users = DB::table('users')
     ->join('townships', 'users.township_id', '=', 'townships.id')
     ->where('townships.id', $id)
+    ->orderBy('users.created_at', 'asc')
     ->select('users.*', 'townships.name as township_name')
     ->paginate(12);
 
@@ -35,6 +36,7 @@ class MemberController extends Controller
     ->select(
         'councils.*',
         'users.name_mm as user_name',
+        'users.photo',
         'designations.designation as designation_name'
     )
     ->where('councils.designation_id', '!=', 1) // exclude designation_id = 1
@@ -47,6 +49,7 @@ class MemberController extends Controller
     ->select(
         'councils.*',
         'users.name_mm as name',
+        'users.photo',
         'designations.designation as designation_name'
     )
     ->where('councils.designation_id', 1) // filter by designation_id = 1

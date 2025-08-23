@@ -114,3 +114,29 @@
   }
 }
 
+/* Loan section styling */
+.post-container .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.post-container .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery */
+.gallery {
+    border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+}
+.gallery:hover {
+    transform: scale(1.05);
+}
+
+/* iPad Pro / Tablet tweaks */
+@media (max-width: 991px) {
+    .post-container .col-lg-8,
+    .post-container .col-lg-4 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
