@@ -124,24 +124,24 @@
     <!-- Slider Section -->
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{ asset('home/image/banner/kwee htike.jpg') }}" class="d-block w-100 slider-img" alt="Slide 1">
-    </div>
-    <div class="carousel-item">
-      <img src="{{ asset('home/image/banner/k-P1240787-2.jpg') }}" class="d-block w-100 slider-img" alt="Slide 2">
-    </div>
-    <div class="carousel-item">
-      <img src="{{ asset('home/image/banner/pagoda.jpg') }}" class="d-block w-100 slider-img" alt="Slide 3">
-    </div>
+    @foreach($banners as $key => $banner)
+      <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+        <img src="{{ asset('home/image/banner/' . $banner->slider_photo) }}"
+             class="d-block w-100 slider-img"
+             alt="Slide {{ $key + 1 }}">
+      </div>
+    @endforeach
   </div>
-    <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+  </button>
 </div>
+
 
     <!-- Content -->
     <div class="content">

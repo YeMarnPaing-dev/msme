@@ -9,7 +9,7 @@ class ContentController extends Controller
 {
     public function index(){
         $comettie = DB::table('cmt')->get('cmt_name');
-        $sliders = DB::table('sliders')->get();
-        return view('home.content',compact('comettie','sliders'));
+        $banners = DB::table('sliders')->get();
+        return view('home.content',compact('comettie','banners'));
     }
 }
